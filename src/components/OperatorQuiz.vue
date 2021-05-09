@@ -65,10 +65,7 @@ export default {
 			);
 			this.answers.push(methodToUse(this.operandLeft, this.operandRight - 1));
 
-			const expectedAnswer = methodToUse(
-				this.operandLeft - 1,
-				this.operandRight
-			);
+			const expectedAnswer = methodToUse(this.operandLeft, this.operandRight);
 
 			this.answers[
 				parseInt(Math.random() * this.answers.length)
