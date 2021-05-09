@@ -1,4 +1,19 @@
-# vue-math-quiz
+# vue-math-quiz 
+Ejercicio de practica vue.js del canal de youtube "Web Dev Junkie".
+**[link del video](https://www.youtube.com/watch?v=y7dh6NrwlPI&ab_channel=WebDevJunkie)**
+
+### En este ejercicio practiqué:
+* Estructuracion de componentes en Vue2
+* Emitir custom events usando $emit
+* condicional v-if
+* ciclo v-for
+
+### Vista previa del ejercicio:
+#### Preview 1
+![Preview 1](https://user-images.githubusercontent.com/69065145/117589212-7b71ff80-b0e5-11eb-8592-84647320b376.png)
+#### Preview 2
+![Preview 2](https://user-images.githubusercontent.com/69065145/117589218-83ca3a80-b0e5-11eb-99d3-df2d4c1ff327.png)
+
 
 ## Project setup
 ```
