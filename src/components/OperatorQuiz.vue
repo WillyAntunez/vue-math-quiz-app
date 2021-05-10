@@ -42,8 +42,14 @@ export default {
 		},
 		startQuiz() {
 			this.isQuizStarted = true;
-			this.operandLeft = parseInt(Math.random() * 13);
-			this.operandRight = parseInt(Math.random() * 13);
+
+			do {
+				this.operandLeft = parseInt(Math.random() * 13);
+				this.operandRight = parseInt(Math.random() * 13);
+			} while (
+				this.operator === '/' &&
+				(this.operandLeft === 0 || this.operandRight === 0)
+			);
 
 			const methods = {
 					'+': (a, b) => a + b,
@@ -55,17 +61,36 @@ export default {
 
 			this.answers = [];
 
-			this.answers.push(methodToUse(this.operandLeft, this.operandRight + 1));
-			this.answers.push(methodToUse(this.operandLeft + 1, this.operandRight));
-			this.answers.push(
-				methodToUse(this.operandLeft + 1, this.operandRight + 1)
-			);
-			this.answers.push(
-				methodToUse(this.operandLeft - 1, this.operandRight + 1)
-			);
-			this.answers.push(methodToUse(this.operandLeft, this.operandRight - 1));
+			while (this.answers.length < 5) {
+				let answer = methodToUse(
+					Math.floor(Math.random() * 13),
+					Math.floor(Math.random() * 13)
+				);
 
-			const expectedAnswer = methodToUse(this.operandLeft, this.operandRight);
+				let isTheAnswer =
+					methodToUse(this.operandLeft, this.operandRight) === answer;
+
+				if (answer % 1 !== 0) {
+					answer = parseFloat(answer.toFixed(3));
+				}
+
+				let isRepeated = this.answers.findIndex((n) => n === answer);
+
+				if (
+					!isNaN(answer) &&
+					answer !== Infinity &&
+					isRepeated < 0 &&
+					!isTheAnswer
+				) {
+					this.answers.push(answer);
+				}
+			}
+
+			let expectedAnswer = methodToUse(this.operandLeft, this.operandRight);
+
+			if (expectedAnswer % 1 !== 0) {
+				expectedAnswer = parseFloat(expectedAnswer.toFixed(3));
+			}
 
 			this.answers[
 				parseInt(Math.random() * this.answers.length)
