@@ -1,5 +1,8 @@
 # vue-math-quiz 
-Ejercicio de practica vue.js del canal de youtube "Web Dev Junkie".
+Ejercicio de practica vue.js del canal de youtube **"Web Dev Junkie"**.
+
+**Nota: el ejercicio tal y como está en el video presenta varios errores que corregí, quitando los numeros repetidos, acortando decimales demasiado largos en los divisiones(inexactas) limitandolo a tres cifras decimales, eliminando divisiones entre cero que daban *infinity* como resultado, entre otros pequeños detalles.**
+
 **[link del video](https://www.youtube.com/watch?v=y7dh6NrwlPI&ab_channel=WebDevJunkie)**
 
 ### En este ejercicio practiqué:
